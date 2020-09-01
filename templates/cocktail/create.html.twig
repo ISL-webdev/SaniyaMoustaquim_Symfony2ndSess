@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% form_theme formCocktail 'bootstrap_4_layout.html.twig' %}
+
+
+
+{% block body %}
+
+    <h1>Créer un cocktail</h1>
+    {{ form_start(formCocktail) }}
+    {{ form_row(formCocktail.name, {'attr' : {'placeholder' : "Nom du cocktail"}}) }}
+    {{ form_row(formCocktail.origin) }}
+    {{ form_row(formCocktail.category) }}
+    {{ form_row(formCocktail.description,{'attr' : {'placeholder' : "Description du cocktail"}}) }}
+    {{ form_row(formCocktail.price) }}
+    {{ form_row(formCocktail.volume) }}
+    {{ form_row(formCocktail.image, {'attr' : {'placeholder' : "URL de l'image"}}) }}
+
+    <button type="submit" class="btn btn-success">
+        {% if editMode %}
+            {# en twig pas de parentheses#}
+            Enregistrer la modification
+        {% else %}
+            Ajouter le nouveau cocktail
+        {% endif %}
+    </button>
+
+    {{ form_end(formCocktail) }}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <article>
+    <h1>{{ cocktail.name }}</h1>
+        <div class="content">
+            <small>{{ cocktail.origin }}</small><br>
+            <img src="{{ cocktail.image }}" alt="#">
+            <p>{{ cocktail.description }}</p>
+            <small>{{ cocktail.price }} €</small><br>
+            <small>{{ cocktail.volume }} Cl.</small>
+
+        </div>
+    </article>
+
+{% endblock %}

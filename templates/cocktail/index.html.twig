@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Cocktails{% endblock %}
+
+{% block body %}
+<h1>Liste des cocktails</h1>
+
+    <section class="cocktails">
+
+        {% for cocktail in cocktails %}
+
+            <article>
+                <h2>{{ cocktail.name }}</h2>
+                <div class="content">
+                    <img src="{{ cocktail.image }}" alt="#">
+                    <p>{{ cocktail.description }}</p>
+                    <a href="{{ path('cocktail_show', {'id': cocktail.id}) }}">Voir les détails du cocktail</a>
+                </div>
+            </article>
+
+        {% endfor %}
+
+    </section>
+
+{% endblock %}
